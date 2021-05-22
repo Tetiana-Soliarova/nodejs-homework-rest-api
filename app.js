@@ -11,7 +11,7 @@ const app = express()
 const formatsLogger = app.get('env') === 'development' ? 'dev' : 'short'
 app.use(helmet())
 app.use(express.static('public'))
-app.use(logger(formatsLogger))
+app.get('env') !== "test" && app.use(logger(formatsLogger))
 app.use(cors({
   origin: '*',
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE, OPTIONS',
