@@ -4,7 +4,7 @@ const cors = require('cors')
 const helmet = require('helmet')
 const boolParser = require('express-query-boolean')
 
-const contactsRouter = require('./routes/api/contacts')
+const contactsRouter = require('./routes/contacts')
 const usersRouter = require('./routes/users')
 const app = express()
 

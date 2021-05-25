@@ -116,10 +116,15 @@ const saveAvatarUser = async (req) => {
   return path.join(FOLDER_AVATARS, newNameAvatar).replace('\\', '/') // replace('\\', '/') - заменяем \\ на /
 }
 
+// const verify = (req, res, next) => { }
+
+// const repeatEmailVerify = (req, res, next) => { }
 module.exports = {
   signup,
   login,
   logout,
   current,
   updateAvatar,
+  // verify,
+  // repeatEmailVerify
 }

@@ -3,6 +3,7 @@ const { Schema, model, SchemaTypes } = mongoose
 const gravatar = require('gravatar')
 const { Gender } = require('../../helper/constants')
 const bcrypt = require('bcryptjs')
+const { nanoid } = require('nanoid')
 const SALT_FACTOR = 6
 
 const userSchema = new Schema({
@@ -50,7 +51,16 @@ const userSchema = new Schema({
   owner: {
     type: SchemaTypes.ObjectId,
     ref: 'user',
-  }
+  },
+  verify: {
+    type: Boolean,
+    default: false,
+  },
+  verifyToken: {
+    type: String,
+    required: [true, 'Verify token is required'],
+    default: nanoid()
+  },
 },
 {
   versionKey: false,
