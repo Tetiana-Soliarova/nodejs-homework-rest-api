@@ -24,13 +24,18 @@ const updateToken = async (id, token) => {
 const updateAvatar = async (id, avatar) => {
   return await User.updateOne({ _id: id }, { avatar })
 }
-
+/*
 const updateTokenVerify = async (id, verify, verifyToken) => {
   return await User.updateOne(
     { _id: id },
     { verify, verifyTokenEmail: verifyToken })
 }
-
+*/
+const updateTokenVerify = async (id, verify, verifyToken) => {
+  return await User.updateOne(
+    { _id: id },
+    { verify,  verifyToken })
+}
 module.exports = {
   findById,
   findByEmail,

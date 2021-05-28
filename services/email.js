@@ -1,7 +1,7 @@
-/*
-const sendgrid = require('@sendgrid/mail')
-const Mailgen = require('mailgen')
-require('dotenv').config()
+const sendgrid = require('@sendgrid/mail');
+const Mailgen = require('mailgen');
+require('dotenv').config();
+
 
 class EmailService {
     #sender = sendgrid
@@ -22,13 +22,14 @@ class EmailService {
     #createTemplateVerifyEmail(verifyToken, name) {
 
         const mailGenerator = new this.#GenerateTemplate({
-    theme: 'default',
+    theme: 'cerberus', //'default'
     product: {
         name: 'System contacts',
-        link: 'this.link'
+        link: this.link
     }
         })
-        const email = {
+
+    const email = {
     body: {
         name,
         intro: 'Welcome to System contacts! We\'re very excited to have you on board.',
@@ -61,5 +62,3 @@ this.#sender
 }
 
 module.exports = EmailService
-
-*/
